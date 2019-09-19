@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{ED6DF2A7-293A-3B7F-53D8-1D5162B0F3F2}</ProjectGuid>
+    <ProjectGuid>{BC84C14B-0E00-C1E9-E750-767DAA00BF39}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -115,36 +115,37 @@
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineMixer.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineShot.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
-    <Compile Include="Assets\Scripts\BreakableRockScript.cs" />
-    <Compile Include="Assets\Scripts\CamController.cs" />
-    <Compile Include="Assets\Scripts\ChangeDirections.cs" />
-    <Compile Include="Assets\Scripts\Elements.cs" />
+    <Compile Include="Assets\Scripts\Elements\Elements.cs" />
+    <Compile Include="Assets\Scripts\Elements\Puddle.cs" />
+    <Compile Include="Assets\Scripts\Elements\WaterInstances.cs" />
     <Compile Include="Assets\Scripts\FireStuff\ActivatingFire.cs" />
     <Compile Include="Assets\Scripts\FireStuff\lavaScript.cs" />
     <Compile Include="Assets\Scripts\FireStuff\StartingFire.cs" />
-    <Compile Include="Assets\Scripts\MovementClass.cs" />
+    <Compile Include="Assets\Scripts\Movement\CamController.cs" />
+    <Compile Include="Assets\Scripts\Movement\ChangeDirections.cs" />
+    <Compile Include="Assets\Scripts\Movement\MovementClass.cs" />
+    <Compile Include="Assets\Scripts\Movement\WallJumps.cs" />
     <Compile Include="Assets\Scripts\OnScreen.cs" />
+    <Compile Include="Assets\Scripts\Rock\BreakableRockScript.cs" />
     <Compile Include="Assets\Scripts\ScreenCheck.cs" />
-    <Compile Include="Assets\Scripts\WallJumps.cs" />
-    <Compile Include="Assets\Scripts\WaterInstances.cs" />
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/Unity/Camera &amp; Movement/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Unity/Camera &amp; Movement/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/Unity/Camera &amp; Movement/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Unity/Camera &amp; Movement/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Unity/Camera &amp; Movement/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/Unity/Camera &amp; Movement/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -324,13 +325,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.9f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>D:/Unity/Camera &amp; Movement/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>D:/Unity/Camera &amp; Movement/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>D:/Unity/Camera &amp; Movement/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.9f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
