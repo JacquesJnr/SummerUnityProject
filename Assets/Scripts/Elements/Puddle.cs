@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Puddle : MonoBehaviour
 {
+    private OnScreen onScreen;
+
     private bool shouldLerp = false;
     public bool isPuddle = true;
 
@@ -18,6 +20,11 @@ public class Puddle : MonoBehaviour
         timeStartedLepring = Time.time;
         this.gameObject.tag = "Untagged";
         shouldLerp = true;
+    }
+
+    void Start()
+    {
+        onScreen = FindObjectOfType<OnScreen>();
     }
 
     void Update()

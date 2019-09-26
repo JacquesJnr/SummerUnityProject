@@ -106,36 +106,41 @@ public class MovementClass : MonoBehaviour
             //Float();
         }        
 
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    Dash();
-        //}
     }
 
     public void MoveRight()
     {
-        directionForce.x = 7f;
+        directionForce.x = 9f;
     }
 
     public void MoveLeft()
     {
-        directionForce.x = -7f;
+        directionForce.x = -9f;
     }
 
     public void DontMove()
     {
         directionForce.x = 0f;
     }
+    
+    public void TouchToJump()
+    {
+        if(maxJumps >= 1)
+        {
+            maxJumps--;
+            Jump();
+        }
+    }
 
-    void Jump()
+    public void Jump()
     {
         rb2d.AddForce(transform.up * jumpForce);
 
-        if(maxJumps == 0 && grounded)
+        if (maxJumps == 0 && grounded)
         {
             rb2d.AddForce(transform.up * jumpForce);
         }
-      
+
     }
 
     void Float()

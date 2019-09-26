@@ -33,6 +33,7 @@ public class OnScreen : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         water.Remove(collision.gameObject); // Removes water objects from water list
+        icePositions.Remove(collision.gameObject); 
     }
 
     void AddWater(GameObject obj) // Adds a gameobject to the water list

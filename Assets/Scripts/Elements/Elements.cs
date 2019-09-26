@@ -45,7 +45,7 @@ public class Elements : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            puddle.StartLerping();
+            //puddle.StartLerping();
         }
 
         if (Input.GetKeyDown(KeyCode.R))
