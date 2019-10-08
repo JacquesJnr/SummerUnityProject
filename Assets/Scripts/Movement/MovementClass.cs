@@ -10,7 +10,7 @@ public class MovementClass : MonoBehaviour
     private GameObject Player;
     public Vector2 directionForce;
     public float playerSpeed = 1f;
-    public float jumpForce = 300f;
+    public float jumpForce = 10f;
     private const float airSpeed = 200f;
     public float climbSpeed = 100f;
 
@@ -40,6 +40,8 @@ public class MovementClass : MonoBehaviour
     public int maxJumpValue;
     public bool canFloat;
 
+    private Swipe swipe;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -57,6 +59,8 @@ public class MovementClass : MonoBehaviour
         {
             facingRight = false;
         }
+
+        swipe = FindObjectOfType<Swipe>();
     }
 
     private void FixedUpdate()
@@ -95,11 +99,7 @@ public class MovementClass : MonoBehaviour
             maxJumps = maxJumpValue;
         }
 
-        if (Input.GetButtonDown("Jump") && maxJumps >=1)
-        {
-            maxJumps--;
-            Jump();
-        }
+        
 
         if (Input.GetButton("Jump") && canFloat)
         {

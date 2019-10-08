@@ -119,11 +119,10 @@
     <Compile Include="Assets\Scripts\Elements\Ice.cs" />
     <Compile Include="Assets\Scripts\Elements\Puddle.cs" />
     <Compile Include="Assets\Scripts\Elements\WaterInstances.cs" />
+    <Compile Include="Assets\Scripts\Inputs\JumpButton.cs" />
     <Compile Include="Assets\Scripts\Inputs\Swipe.cs" />
     <Compile Include="Assets\Scripts\Movement\CamController.cs" />
-    <Compile Include="Assets\Scripts\Movement\ChangeDirections.cs" />
     <Compile Include="Assets\Scripts\Movement\MovementClass.cs" />
-    <Compile Include="Assets\Scripts\Movement\WallJumps.cs" />
     <Compile Include="Assets\Scripts\OnScreen.cs" />
     <Compile Include="Assets\Scripts\ScreenCheck.cs" />
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
