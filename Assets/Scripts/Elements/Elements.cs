@@ -49,6 +49,11 @@ public class Elements : MonoBehaviour
             {
                 Ice();
                 onScreen.steamEffects.Stop();
+                onScreen.steamEffects.GetComponent<Collider2D>().enabled = false;
+                if (movement.anim.GetBool("playerHurt"))
+                {
+                    movement.anim.SetBool("playerHurt", false);
+                }
             }
 
             //movement.DashRight();

@@ -11,12 +11,11 @@ TagManager:
   - Squares
   - WallJumpZone
   - DirectionChange
-  - VineWall
-  - LavaWall
   - puddle
   - icePosition
   - ice
   - Icicle
+  - Steam
   layers:
   - Default
   - TransparentFX
@@ -34,7 +33,7 @@ TagManager:
   - IgnoreUI
   - Ice
   - Icicle
-  - 
+  - Steam
   - 
   - 
   - 

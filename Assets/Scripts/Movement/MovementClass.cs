@@ -184,24 +184,7 @@ public class MovementClass : MonoBehaviour
        
     }
 
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Icicle")
-    //    {
-    //        anim.SetBool("playerHurt", true);
-    //    }
-       
-    //}
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Icicle")
-    //    {
-    //        anim.SetBool("playerHurt", false);
-    //    }
-    //}
-
-
+   
     public void Flip(float horizontal)
     {
         facingRight = !facingRight;
