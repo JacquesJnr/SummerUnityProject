@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEditor;
 
 public class MovementClass : MonoBehaviour
@@ -8,57 +9,52 @@ public class MovementClass : MonoBehaviour
     [HideInInspector]
     public Rigidbody2D rb2d;
     private GameObject Player;
-    public Vector2 directionForce;
+    private Vector2 velocity;
     public float playerSpeed = 1f;
     public float jumpForce = 10f;
-    private const float airSpeed = 200f;
-    public float climbSpeed = 100f;
+    private float airSpeed = 200f;
+    private float climbSpeed = 100f;
+    private float slideSpeed;
 
     public bool facingRight;
-    private bool moveRight;
-    private bool moveLeft;
     public bool grounded;
+    public bool sliding;
     public Transform groundCheck;
     private float checkRadius = 0.05f;
     public LayerMask whatIsGround;
-    public LayerMask whatIsVines;
-    public LayerMask whatIsLava;
+    public LayerMask whatIsIce;
 
-    public bool touchingVineWall; 
-    public bool touchingWallRight;
-    public bool touchingWallLeft;
-    public bool inLava;
-    public bool lavaImmune;
-    public float wallCheckRadius;
+    private bool touchingWallRight;
+    private bool touchingWallLeft;
+    public bool onIce;
+    public PhysicsMaterial2D icy;
+    private float wallCheckRadius = 0;
     private float vineCheckRadius = 0.1f;
     public Transform RightWallCheck;
     public Transform LeftWallCheck;
     public Transform VineWallCheck;
-    public Transform lavaFloorCheck;
+    
 
     private int maxJumps = 1;
     public int maxJumpValue;
     public bool canFloat;
 
+    public Sprite walking;
+    public Sprite idle;
+    public Animator anim;
+    public Button RightButton;
+    public Button LeftButton;
+            
     private Swipe swipe;
 
-    void Start()
+    public void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         Player = GameObject.Find("Player");
         maxJumps = maxJumpValue;
-        directionForce.x = 0f;
-        moveRight = false;
-        moveLeft = false;
-
-        if (rb2d.velocity.x > 0)
-        {
-            facingRight = true;
-        }
-        else
-        {
-            facingRight = false;
-        }
+        velocity.x = 0f;
+        facingRight = true;
+        anim = GetComponent<Animator>();
 
         swipe = FindObjectOfType<Swipe>();
     }
@@ -66,10 +62,9 @@ public class MovementClass : MonoBehaviour
     private void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-        inLava = Physics2D.OverlapCircle(lavaFloorCheck.position, checkRadius, whatIsLava);
+        onIce = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsIce);
         touchingWallRight = Physics2D.OverlapCircle(RightWallCheck.position, wallCheckRadius, whatIsGround);
         touchingWallLeft = Physics2D.OverlapCircle(LeftWallCheck.position, wallCheckRadius, whatIsGround);
-        touchingVineWall = Physics2D.OverlapCircle(VineWallCheck.position, vineCheckRadius, whatIsVines);
 
         if (grounded) // Resets the gravity
         {
@@ -78,9 +73,14 @@ public class MovementClass : MonoBehaviour
 
         if (!touchingWallRight || !touchingWallLeft) // Player will not move forward while they are touching a wall
         {
-            transform.Translate(directionForce * playerSpeed * Time.deltaTime);
+            transform.Translate(velocity * playerSpeed * Time.deltaTime);
         }
-            
+
+        Vector2 move = Vector2.zero;
+
+        move.x = Input.GetAxis("Horizontal");
+
+
         if (rb2d.velocity.y < 0 && maxJumps == 0 && !touchingWallLeft && !touchingWallRight) // Checks if the player is falling and has no jumps
         {
             canFloat = true;
@@ -89,6 +89,7 @@ public class MovementClass : MonoBehaviour
         {
             canFloat = false;
         }
+
     }
 
     void Update()
@@ -98,29 +99,36 @@ public class MovementClass : MonoBehaviour
         {
             maxJumps = maxJumpValue;
         }
-
-        
-
-        if (Input.GetButton("Jump") && canFloat)
+      
+        if(velocity.x > 0 && !facingRight)
         {
-            //Float();
-        }        
+            Flip(velocity.x);
+        }
 
+        if(velocity.x < 0 && facingRight)
+        {
+            Flip(velocity.x);
+        }
     }
 
     public void MoveRight()
     {
-        directionForce.x = 9f;
+        velocity.x = 9f;
+        airSpeed = 5f;
+        Player.GetComponent<SpriteRenderer>().sprite = walking;
     }
 
     public void MoveLeft()
     {
-        directionForce.x = -9f;
+        velocity.x = -9f;
+        airSpeed = -5f;
+        Player.GetComponent<SpriteRenderer>().sprite = walking;
     }
 
     public void DontMove()
     {
-        directionForce.x = 0f;
+       velocity.x = 0f;
+       Player.GetComponent<SpriteRenderer>().sprite = idle;
     }
     
     public void TouchToJump()
@@ -151,34 +159,54 @@ public class MovementClass : MonoBehaviour
         }
     }
 
-    void Dash()
+    public void DashRight()
     {
         if (!grounded)
         {
-            if (facingRight)
-            {
-                rb2d.AddForce(transform.right * airSpeed);
-            }
+            Player.GetComponent<SpriteRenderer>().sprite = walking;
+            rb2d.transform.Translate(velocity * airSpeed *Time.deltaTime);
 
-            if (!facingRight)
-            {
-                rb2d.AddForce(-transform.right * airSpeed);
-            }
         }
     }
 
-    public void WallJump()
+    public void DashLeft()
     {
-        if (touchingWallRight && !grounded)
+        if (!grounded)
         {
-            rb2d.AddForce(-transform.right * 200f);
-            rb2d.AddForce(transform.up * 200f);
+            Player.GetComponent<SpriteRenderer>().sprite = walking;
+            rb2d.transform.Translate(velocity * -airSpeed);
         }
+       
+    }
 
-        if (touchingWallLeft && !grounded)
-        {
-            rb2d.AddForce(transform.right * 200f);
-            rb2d.AddForce(transform.up * 200f);
-        }
+    void Slide()
+    {
+       
+    }
+
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Icicle")
+    //    {
+    //        anim.SetBool("playerHurt", true);
+    //    }
+       
+    //}
+
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Icicle")
+    //    {
+    //        anim.SetBool("playerHurt", false);
+    //    }
+    //}
+
+
+    public void Flip(float horizontal)
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 }

@@ -8,11 +8,26 @@ public class OnScreen : MonoBehaviour
     public List<GameObject> icePositions;
     public GameObject currentWater; // The first water body on screen
     public GameObject currentIcePos;
+    public ParticleSystem steamEffects;
+
+    public bool iceOnScreen;
 
     public void Start()
     {
         water = new List<GameObject>();
         icePositions = new List<GameObject>();
+    }
+
+    public void Update()
+    {
+        if(icePositions.Capacity == 0)
+        {
+            iceOnScreen = false;
+        }
+        else
+        {
+            iceOnScreen = true;
+        }
     }
 
     void OnTriggerStay2D(Collider2D collision)
@@ -21,7 +36,9 @@ public class OnScreen : MonoBehaviour
         {
             AddWater(collision.gameObject); // Calls the AddWater function and passes the objects inside the camera collider
             currentWater = water[0];
+            steamEffects = water[0].GetComponentInChildren<ParticleSystem>();
         }
+
 
         if(collision.gameObject.tag == "icePosition")
         {

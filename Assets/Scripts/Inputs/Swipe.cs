@@ -13,6 +13,8 @@ public class Swipe : MonoBehaviour
     {
         swipeLeft = swipeRight = swipeUp = swipeDown = false;
 
+
+        
         #region Mobile Inputs
 
         if (Input.touches.Length != 0)
@@ -101,8 +103,8 @@ public class Swipe : MonoBehaviour
     }
 
     public Vector2 SwipeDelta { get { return swipeDelta; } }
-    public bool SwipeLeft { get { return swipeLeft; } }
-    public bool SwipeRight { get { return swipeRight; } }
-    public bool SwipeUp { get { return swipeUp; } }
-    public bool SwipeDown { get { return swipeDown; } }
+    public bool Left { get { return swipeLeft; } }
+    public bool Right { get { return swipeRight; } }
+    public bool Up { get { return swipeUp; } }
+    public bool Down { get { return swipeDown; } }
 }
