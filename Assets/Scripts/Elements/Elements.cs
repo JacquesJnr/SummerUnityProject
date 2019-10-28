@@ -55,7 +55,7 @@ public class Elements : MonoBehaviour
                     movement.anim.SetBool("playerHurt", false);
                 }
             }
-
+            
             //movement.DashRight();
             
         }

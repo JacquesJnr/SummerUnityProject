@@ -109,6 +109,31 @@ public class MovementClass : MonoBehaviour
         {
             Flip(velocity.x);
         }
+
+        #region PcInputs
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            MoveRight();
+        }
+
+        if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        {
+            DontMove();
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            MoveLeft();
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            TouchToJump();
+        }
+
+        #endregion
+
     }
 
     public void MoveRight()

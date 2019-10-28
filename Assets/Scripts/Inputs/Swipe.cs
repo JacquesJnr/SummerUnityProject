@@ -13,8 +13,20 @@ public class Swipe : MonoBehaviour
     {
         swipeLeft = swipeRight = swipeUp = swipeDown = false;
 
+        #region Standalone Inputs
 
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            isDragging = true;
+            startTouch = Input.mousePosition;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            Reset();
+        }
+
+        #endregion
+
         #region Mobile Inputs
 
         if (Input.touches.Length != 0)
