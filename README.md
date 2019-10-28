@@ -18,6 +18,13 @@ There are 4 main action you can do to control the player in the demo:
 4. Swipe right to use the ice power up.
 
 
+PC CONTROLS:
+
+D - Move Right,
+A - Move Left,
+SPACE - Jump,
+Mouse Drag Right : Use Ice power-up
+
 STAGE HAZARDS:
 
 Use the Ice power-up to create a layer of Ice over the hot springs. The Steam from the hot springs as well as the icicles that fall from the ceiling can damage the player.
