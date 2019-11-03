@@ -7,46 +7,35 @@ public class CamController : MonoBehaviour
     public GameObject defaultCam;
     public GameObject zoomInCam;
     public GameObject zoomOutCam;
+    private GameObject player;
+    public Camera currentCam;
 
-    void Default()
+
+    private void Update()
     {
-        defaultCam.SetActive(true);
-        zoomInCam.SetActive(false);
-        zoomOutCam.SetActive(false);
+        player = GameObject.Find("Player");
+        
     }
 
-    void ZoomIn()
-    {
-        defaultCam.SetActive(false);
-        zoomInCam.SetActive(true);
-        zoomOutCam.SetActive(false);
-    }
+    //void Default()
+    //{
+    //    defaultCam.SetActive(true);
+    //    zoomInCam.SetActive(false);
+    //    zoomOutCam.SetActive(false);
+    //}
 
-    void ZoomOut()
-    {
-        defaultCam.SetActive(false);
-        zoomInCam.SetActive(false);
-        zoomOutCam.SetActive(true);
-    }
+    //void ZoomIn()
+    //{
+    //    defaultCam.SetActive(false);
+    //    zoomInCam.SetActive(true);
+    //    zoomOutCam.SetActive(false);
+    //}
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "DefaultZoom")
-        {
-            print("Reset Camera");
-            Default();
-        }
+    //void ZoomOut()
+    //{
+    //    defaultCam.SetActive(false);
+    //    zoomInCam.SetActive(false);
+    //    zoomOutCam.SetActive(true);
+    //}
 
-        if (other.gameObject.tag == "ZoomIn")
-        {
-            print("Zoom In");
-            ZoomIn();
-        }
-
-        if (other.gameObject.tag == "ZoomOut")
-        {
-            print("Zoom Out");
-            ZoomOut();
-        }
-    }
 }

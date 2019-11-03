@@ -124,9 +124,10 @@
     <Compile Include="Assets\Scripts\Inputs\Swipe.cs" />
     <Compile Include="Assets\Scripts\Movement\CamController.cs" />
     <Compile Include="Assets\Scripts\Movement\MovementClass.cs" />
-    <Compile Include="Assets\Scripts\Movement\PhysicsObject.cs" />
     <Compile Include="Assets\Scripts\OnScreen.cs" />
     <Compile Include="Assets\Scripts\ScreenCheck.cs" />
+    <Compile Include="Assets\Scripts\Tests\PhysicsObject.cs" />
+    <Compile Include="Assets\Scripts\Tests\PlayerPlatformerController.cs" />
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
