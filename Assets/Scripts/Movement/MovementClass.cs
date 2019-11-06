@@ -49,7 +49,7 @@ public class MovementClass : MonoBehaviour
     //JumpPhysics
     private bool doubleJump;
     private float jumpForce = 150f;
-    private float doubleJumpForce = 150f;
+    private float doubleJumpForce = 170f;
     private int maxJumps = 1;
     public int maxJumpValue;
     public float fallMultiplier = 2.5f;
@@ -92,7 +92,7 @@ public class MovementClass : MonoBehaviour
 
         groundspeed = (int)velocity.x;
 
-        if (rb2d.velocity.y < 0 && maxJumps == 0 && !touchingWallLeft && !touchingWallRight) // Checks if the player is falling and has no jumps
+        if (rb2d.velocity.y < 0 && maxJumps == 0) // Checks if the player is falling and has no jumps
         {
             canFloat = true;
         }
@@ -104,13 +104,13 @@ public class MovementClass : MonoBehaviour
         if (!grounded)
         {
             holdingJump = false;
-            //jumpForce = 20f;
         }
 
         if (grounded)
         {
             doubleJump = false;
             anim.SetBool("doubleJump", false);
+            rb2d.gravityScale = 2f;
         }
 
         if (holdingJump && velocity.x !=0)
@@ -141,8 +141,8 @@ public class MovementClass : MonoBehaviour
             Flip(velocity.x);
         }
 
-        anim.SetInteger("velocityX", groundspeed);
-        anim.SetBool("grounded", grounded);
+        anim.SetInteger("velocityX", groundspeed); // Checks the speed of the player in the animator
+        anim.SetBool("grounded", grounded); //Checks if the player is grounded in the animator
 
            #region PCInputs 
 
@@ -172,6 +172,11 @@ public class MovementClass : MonoBehaviour
             holdingJump = false;
         }
 
+        if(canFloat)
+        {
+            Float();
+        }
+
         if (Input.GetButtonUp("Jump"))
         {
             anim.SetBool("holdingJump", false);
@@ -182,18 +187,6 @@ public class MovementClass : MonoBehaviour
             }
             
         }
-
-        //if (Input.GetButton("Jump") && !grounded)
-        //{
-        //    doubleJump = true;
-        //    anim.SetBool("doubleJump", true);
-        //    DoubleJump();
-        //}
-        //else
-        //{
-        //    doubleJump = false;
-        //    anim.SetBool("doubleJump", false);
-        //}
 
         #endregion
 
@@ -220,10 +213,9 @@ public class MovementClass : MonoBehaviour
     public void DontMove()
     {
        velocity.x = 0f;
-
     }
 
-    public void HoldJump()
+    public void HoldJump() // Allows the player to jump higher depending on how long the player hold the jump button
     {
         if(rb2d.velocity.y < 0)
         {
@@ -242,28 +234,37 @@ public class MovementClass : MonoBehaviour
 
     public void Jump()
     {
-        rb2d.AddForce(transform.up * jumpForce);
-
-        // Grounded Jump
-        if (maxJumps == 0 && grounded)
+        if (!canFloat)
         {
             rb2d.AddForce(transform.up * jumpForce);
-        }
 
-        // Double Jump
-        else if(maxJumps == 0 && !grounded)
-        {
-            rb2d.AddForce(transform.up * doubleJumpForce);
-            anim.SetBool("doubleJump", true);
-        }
+            // Grounded Jump
+            if (maxJumps == 0 && grounded)
+            {
+                rb2d.AddForce(transform.up * jumpForce);
+            }
 
+            // Double Jump
+            else if (maxJumps == 0 && !grounded)
+            {
+                rb2d.AddForce(transform.up * doubleJumpForce);
+                anim.SetBool("doubleJump", true);
+            }
+        }
+       
     }
 
     void Float()
     {
-        if (!touchingWallRight || !touchingWallLeft)
+        if (Input.GetButton("Jump") && !grounded)
         {
             rb2d.gravityScale = 0.5f;
+            anim.SetBool("Floating", true);
+        }
+        else
+        {
+            anim.SetBool("Floating", false);
+            rb2d.gravityScale = 2f;
         }
     }
 
