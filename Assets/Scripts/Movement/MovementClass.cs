@@ -11,6 +11,7 @@ public class MovementClass : MonoBehaviour
     public Rigidbody2D rb2d;
     private GameObject Player;
     private Vector2 velocity;
+    private int groundspeed;
     public float playerSpeed = 1f;
     private float airSpeed = 200f;
     private float climbSpeed = 100f;
@@ -89,6 +90,7 @@ public class MovementClass : MonoBehaviour
             transform.Translate(velocity * playerSpeed * Time.deltaTime);
         }
 
+        groundspeed = (int)velocity.x;
 
         if (rb2d.velocity.y < 0 && maxJumps == 0 && !touchingWallLeft && !touchingWallRight) // Checks if the player is falling and has no jumps
         {
@@ -139,7 +141,7 @@ public class MovementClass : MonoBehaviour
             Flip(velocity.x);
         }
 
-        anim.SetFloat("velocityX", velocity.x);
+        anim.SetInteger("velocityX", groundspeed);
         anim.SetBool("grounded", grounded);
 
            #region PCInputs 
