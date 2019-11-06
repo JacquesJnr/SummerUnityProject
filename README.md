@@ -22,7 +22,8 @@ PC CONTROLS:
 
 D - Move Right,
 A - Move Left,
-SPACE - Jump,
+HOLD SPACE - Power Jump,
+SPACE - Jump & Double Jump
 Mouse Drag Right : Use Ice power-up
 
 STAGE HAZARDS:
