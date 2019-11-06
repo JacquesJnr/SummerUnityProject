@@ -7,7 +7,12 @@ public class Swipe : MonoBehaviour
     private bool swipeRight, swipeLeft, swipeUp, swipeDown;
     private bool isDragging = false;
     private Vector2 startTouch, swipeDelta;
+    private MovementClass movement;
 
+    private void Start()
+    {
+        movement = FindObjectOfType<MovementClass>();
+    }
 
     private void Update()
     {
@@ -112,6 +117,7 @@ public class Swipe : MonoBehaviour
     {
         startTouch = swipeDelta = Vector2.zero;
         isDragging = false;
+        
     }
 
     public Vector2 SwipeDelta { get { return swipeDelta; } }

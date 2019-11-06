@@ -34,9 +34,22 @@ public class Elements : MonoBehaviour
         Player = this.gameObject; // Sets the pkayer variable
     }
 
+    public IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.2f);
+        movement.anim.SetBool("powerUp", false);
+    }
+
     private void FixedUpdate()
     {
         water = onScreen.currentWater; // Checks which water body the player should interact with
+        
+        if(swipe.Right || swipe.Left || swipe.Up || swipe.Down)
+        {
+            movement.anim.SetBool("powerUp", true);
+            StartCoroutine(Wait());
+        }
+
     }
 
 
@@ -54,10 +67,9 @@ public class Elements : MonoBehaviour
                 {
                     movement.anim.SetBool("playerHurt", false);
                 }
+                
             }
-            
-            //movement.DashRight();
-            
+
         }
 
         if (swipe.Left)
