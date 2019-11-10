@@ -128,6 +128,7 @@
     <Compile Include="Assets\Scripts\ScreenCheck.cs" />
     <Compile Include="Assets\Scripts\Tests\PhysicsObject.cs" />
     <Compile Include="Assets\Scripts\Tests\PlayerPlatformerController.cs" />
+    <Compile Include="Assets\Scripts\UI\BookScript.cs" />
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
