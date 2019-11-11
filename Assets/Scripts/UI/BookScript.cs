@@ -10,15 +10,19 @@ public class BookScript : MonoBehaviour
 
     private Animator anim;
     public RawImage book;
+    public RawImage book2;
     public RawImage icon;
     private bool openBook;
     private bool closeBook;
 
     public Canvas inputCanvas;
     public Canvas menuCanvas;
+    public Canvas background;
     public GameObject mainPage;
     public GameObject tutorialPage;
     public GameObject elementPage;
+    public GameObject ice, vine, rock, fire;
+    public GameObject exit;
 
     private MovementClass movement;
 
@@ -28,6 +32,7 @@ public class BookScript : MonoBehaviour
         book.enabled = false;
         movement = FindObjectOfType<MovementClass>();
         menuCanvas.enabled = false;
+        //background.enabled = false;
         tutorialPage.SetActive(false);
         elementPage.SetActive(false);
     }
@@ -42,6 +47,8 @@ public class BookScript : MonoBehaviour
         {
             movement.enabled = true;
         }
+        
+        
     }
 
     public void Icon()
@@ -54,7 +61,6 @@ public class BookScript : MonoBehaviour
 
     public void Close()
     {
-        
         //Hide the book
         book.enabled = false;
         openBook = false;
@@ -63,6 +69,7 @@ public class BookScript : MonoBehaviour
         // Switch the canvases
         inputCanvas.enabled = true;
         menuCanvas.enabled = false;
+        background.enabled = false;
     }
 
     public void MenuToTutorial()
@@ -88,4 +95,46 @@ public class BookScript : MonoBehaviour
         elementPage.SetActive(false);
     }
  
+    public void Ice()
+    {
+        ice.SetActive(true);
+        exit.SetActive(true);
+        background.enabled = true;
+        book2.enabled = false;
+    }
+
+    public void Vine()
+    {
+        vine.SetActive(true);
+        exit.SetActive(true);
+        background.enabled = true;
+        book2.enabled = false;
+    }
+
+    public void Rock()
+    {
+        rock.SetActive(true);
+        exit.SetActive(true);
+        background.enabled = true;
+        book2.enabled = false;
+    }
+
+    public void Fire()
+    {
+        fire.SetActive(true);
+        exit.SetActive(true);
+        background.enabled = true;
+        book2.enabled = false;
+    }
+
+    public void CloseTutorial()
+    {
+        ice.SetActive(false);
+        vine.SetActive(false);
+        rock.SetActive(false);
+        fire.SetActive(false);
+        book2.enabled = true;
+        exit.SetActive(false);
+       
+    }
 }
