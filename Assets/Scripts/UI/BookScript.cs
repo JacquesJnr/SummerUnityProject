@@ -85,6 +85,18 @@ public class BookScript : MonoBehaviour
         elementPage.SetActive(true);
     }
 
+    public void ElementsToTutorials()
+    {
+        elementPage.SetActive(false);
+        tutorialPage.SetActive(true);
+    }
+
+    public void TutorialsToMenu()
+    {
+        tutorialPage.SetActive(false);
+        mainPage.SetActive(true);
+    }
+
     public IEnumerator ShowText()
     {
         yield return new WaitForSeconds(0.6f);
