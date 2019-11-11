@@ -179,13 +179,12 @@ public class MovementClass : MonoBehaviour
 
         if (Input.GetButtonUp("Jump"))
         {
-            anim.SetBool("holdingJump", false);
             if (maxJumps >= 1)
             {
                 maxJumps--;
                 Jump();
             }
-            
+
         }
 
         #endregion
@@ -231,9 +230,20 @@ public class MovementClass : MonoBehaviour
     }
     
    
+    public void TouchToJump()
+    {
+        if (maxJumps >= 1)
+        {
+            maxJumps--;
+            Jump();
+        }
+    }
+
 
     public void Jump()
     {
+        anim.SetBool("holdingJump", false);
+
         if (!canFloat)
         {
             rb2d.AddForce(transform.up * jumpForce);
