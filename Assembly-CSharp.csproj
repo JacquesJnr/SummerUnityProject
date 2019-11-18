@@ -118,7 +118,6 @@
     <Compile Include="Assets\Scripts\Elements\Elements.cs" />
     <Compile Include="Assets\Scripts\Elements\Ice.cs" />
     <Compile Include="Assets\Scripts\Elements\Icicles.cs" />
-    <Compile Include="Assets\Scripts\Elements\PlayerCheck.cs" />
     <Compile Include="Assets\Scripts\Elements\SteamCheck.cs" />
     <Compile Include="Assets\Scripts\Elements\WaterInstances.cs" />
     <Compile Include="Assets\Scripts\Inputs\Swipe.cs" />

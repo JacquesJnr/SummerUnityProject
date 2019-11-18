@@ -141,6 +141,11 @@ public class MovementClass : MonoBehaviour
             Flip(velocity.x);
         }
 
+        if (anim.GetBool("playerHurt"))
+        {
+            StartCoroutine(Hurt());
+        }
+
         anim.SetInteger("velocityX", groundspeed); // Checks the speed of the player in the animator
         anim.SetBool("grounded", grounded); //Checks if the player is grounded in the animator
 
@@ -189,6 +194,12 @@ public class MovementClass : MonoBehaviour
 
         #endregion
 
+    }
+
+    private IEnumerator Hurt()
+    {
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool("playerHurt", false);
     }
 
     public void MoveRight()

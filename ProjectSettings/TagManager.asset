@@ -16,6 +16,7 @@ TagManager:
   - ice
   - Icicle
   - Steam
+  - platforms
   layers:
   - Default
   - TransparentFX
@@ -35,7 +36,7 @@ TagManager:
   - Icicle
   - Steam
   - IgnorePlayer
-  - 
+  - platforms
   - 
   - 
   - 

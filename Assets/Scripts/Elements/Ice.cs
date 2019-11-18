@@ -35,8 +35,8 @@ public class Ice : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            slideForward = new Vector2(1f, 0);
-            slideBackward = new Vector2(-1f, 0);
+            slideForward = new Vector2(3f, 0);
+            slideBackward = new Vector2(-3f, 0);
             if (movement.facingRight)
             {
                 movement.rb2d.transform.Translate(slideForward * Time.deltaTime);

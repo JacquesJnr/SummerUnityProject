@@ -25,7 +25,6 @@ public class Elements : MonoBehaviour
     void Start()
     {
         movement = FindObjectOfType<MovementClass>(); //References the movement script
-        waterInstances = FindObjectOfType<WaterInstances>(); // References the water instance script
         onScreen = FindObjectOfType<OnScreen>(); // References the onscreen script
         swipe = FindObjectOfType<Swipe>();
         iceScript = FindObjectOfType<Ice>();
@@ -56,20 +55,16 @@ public class Elements : MonoBehaviour
     void Update()
     {
 
+      
         if (swipe.Right)
         {
             if (movement.grounded && onScreen.iceOnScreen)
             {
                 Ice();
                 onScreen.steamEffects.Stop();
-                onScreen.steamEffects.GetComponent<Collider2D>().enabled = false;
-                if (movement.anim.GetBool("playerHurt"))
-                {
-                    movement.anim.SetBool("playerHurt", false);
-                }
-                
+                onScreen.steamEffects.GetComponent<Collider2D>().enabled = false;             
             }
-
+           
         }
 
         if (swipe.Left)
