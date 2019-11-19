@@ -126,8 +126,8 @@
     <Compile Include="Assets\Scripts\Movement\MovementClass.cs" />
     <Compile Include="Assets\Scripts\OnScreen.cs" />
     <Compile Include="Assets\Scripts\ScreenCheck.cs" />
-    <Compile Include="Assets\Scripts\Tests\PhysicsObject.cs" />
-    <Compile Include="Assets\Scripts\Tests\PlayerPlatformerController.cs" />
+    <Compile Include="Assets\Scripts\Tests\CharController2D.cs" />
+    <Compile Include="Assets\Scripts\Tests\MovementTest.cs" />
     <Compile Include="Assets\Scripts\UI\BookScript.cs" />
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
     <Reference Include="Unity.Timeline.Editor">

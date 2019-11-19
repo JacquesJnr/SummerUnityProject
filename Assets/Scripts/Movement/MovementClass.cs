@@ -23,6 +23,7 @@ public class MovementClass : MonoBehaviour
     public bool holdingJump;
     public float minGroundNormalY = .85f;
 
+
     // World Physics
     public Transform groundCheck;
     private float checkRadius = 0.05f;
@@ -124,8 +125,8 @@ public class MovementClass : MonoBehaviour
     }
 
     void Update()
-    {
-       
+    { 
+
         if (grounded) //Resets Jump Values
         {
             maxJumps = maxJumpValue;
@@ -316,7 +317,6 @@ public class MovementClass : MonoBehaviour
         // Attempt vertical normalization
         if (grounded)
         {
-            //Debug.Log("Here I go!");
             RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 1f, whatIsGround);
             
             if (hit.collider != null && Mathf.Abs(hit.normal.x) > 0.1f)
