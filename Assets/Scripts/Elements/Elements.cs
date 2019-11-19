@@ -62,7 +62,8 @@ public class Elements : MonoBehaviour
             {
                 Ice();
                 onScreen.steamEffects.Stop();
-                onScreen.steamEffects.GetComponent<Collider2D>().enabled = false;             
+                onScreen.steamEffects.GetComponent<CapsuleCollider2D>().enabled = false;             
+                onScreen.steamEffects.GetComponent<BoxCollider2D>().enabled = false;             
             }
            
         }

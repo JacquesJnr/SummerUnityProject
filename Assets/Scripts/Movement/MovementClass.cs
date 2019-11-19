@@ -9,7 +9,8 @@ public class MovementClass : MonoBehaviour
     //Player Physics
     [HideInInspector]
     public Rigidbody2D rb2d;
-    private GameObject Player;
+    [HideInInspector]
+    public GameObject Player;
     private Vector2 velocity;
     private int groundspeed;
     public float playerSpeed = 1f;
