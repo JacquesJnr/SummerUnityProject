@@ -115,6 +115,7 @@
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineMixer.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineShot.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
+    <Compile Include="Assets\parallaxing.cs" />
     <Compile Include="Assets\Scripts\Elements\Elements.cs" />
     <Compile Include="Assets\Scripts\Elements\Ice.cs" />
     <Compile Include="Assets\Scripts\Elements\Icicles.cs" />
