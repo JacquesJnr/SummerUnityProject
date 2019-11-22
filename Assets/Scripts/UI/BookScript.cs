@@ -18,11 +18,9 @@ public class BookScript : MonoBehaviour
     public Canvas inputCanvas;
     public Canvas menuCanvas;
     public Canvas background;
-    public GameObject mainPage;
-    public GameObject tutorialPage;
-    public GameObject elementPage;
-    public GameObject ice, vine, rock, fire;
-    public GameObject exit;
+    public GameObject mainPage, tutorialPage, elementPage;
+    public GameObject ice, vine, rock, fire, movementTutorial;
+    public GameObject exit, exit2;
 
     private MovementClass movement;
 
@@ -85,6 +83,22 @@ public class BookScript : MonoBehaviour
         elementPage.SetActive(true);
     }
 
+    public void TutorialToMovement()
+    {
+        tutorialPage.SetActive(false);
+        movementTutorial.SetActive(true);
+        book2.enabled = false;
+        exit2.SetActive(true);
+    }
+
+    public void MovementToTutorials()
+    {
+        movementTutorial.SetActive(false);
+        book2.enabled = true;
+        tutorialPage.SetActive(true);
+        exit2.SetActive(false);
+    }
+
     public void ElementsToTutorials()
     {
         elementPage.SetActive(false);
@@ -145,6 +159,7 @@ public class BookScript : MonoBehaviour
         vine.SetActive(false);
         rock.SetActive(false);
         fire.SetActive(false);
+        movementTutorial.SetActive(false);
         book2.enabled = true;
         exit.SetActive(false);
        
