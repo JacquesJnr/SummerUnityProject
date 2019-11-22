@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 public class parallaxing : MonoBehaviour
 {
-    public Transform[] backgrounds; 
+    public List<Transform> backgrounds; 
     private float[] parallaxScales;
+    public GameObject[] backgroundGroup;
     public float smoothing = 1f; 
     private Transform cam; 
     private Vector3 previousCamPos; 
@@ -19,17 +22,20 @@ public class parallaxing : MonoBehaviour
         // The previous frame had the current frame's camera position
         previousCamPos = cam.position;
         // asigning coresponding parallaxScales
-        parallaxScales = new float[backgrounds.Length];
-        for (int i = 0; i < backgrounds.Length; i++)
+        parallaxScales = new float[backgrounds.Count];
+        for (int i = 0; i < backgrounds.Count; i++)
         {
             parallaxScales[i] = backgrounds[i].position.z;
         }
+
+
+        
     }
     // Update is called once per frame
     void Update()
     {
         // for each background
-        for (int i = 0; i < backgrounds.Length; i++)
+        for (int i = 0; i < backgrounds.Count; i++)
         {
             // the parallax is the opposite of the camera movement because the previous frame multiplied by the scale
             float parallax = (cam.position.x - previousCamPos.x) * parallaxScales[i];
