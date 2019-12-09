@@ -60,27 +60,12 @@ public class Elements : MonoBehaviour
         {
             if (movement.grounded && onScreen.iceOnScreen)
             {
-                Ice();
+                iceScript.InstatiateIce();
                 onScreen.steamEffects.Stop();
                 onScreen.steamEffects.GetComponent<CapsuleCollider2D>().enabled = false;             
                 onScreen.steamEffects.GetComponent<BoxCollider2D>().enabled = false;             
             }
            
-        }
-
-        if (swipe.Left)
-        {
-            
-            //movement.DashLeft();
-        }
-
-    
-        void Ice() //Checks to see if water is not a puddle and lays ice over the surface
-        {
-            if (onScreen.iceOnScreen)
-            {
-                iceScript.InstatiateIce();
-            }
         }
     }
 }

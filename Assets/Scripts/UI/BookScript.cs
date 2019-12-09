@@ -5,34 +5,26 @@ using UnityEngine.UI;
 
 public class BookScript : MonoBehaviour
 {
-    // Open Book when the book button is pressed
-    // Hide the book when they press the exit button
-
     private Animator anim;
-    public RawImage book;
-    public RawImage book2;
-    public RawImage icon;
-    private bool openBook;
-    private bool closeBook;
+    public RawImage book; // Book Screen
+    public RawImage icon; // UI Icon
+    private bool openBook; // Used to set the animator bool 
 
-    public Canvas inputCanvas;
-    public Canvas menuCanvas;
-    public Canvas background;
-    public GameObject mainPage, tutorialPage, elementPage;
-    public GameObject ice, vine, rock, fire, movementTutorial;
-    public GameObject exit, exit2;
-
-    private MovementClass movement;
+    public Canvas background; 
+    public GameObject mainPage, tutorialPage, elementPage; //Menu text
+    public GameObject ice, vine, rock, fire, movementTutorial; //Tutorial screens
+    public GameObject exit, exit2; // X buttons
+    private MovementClass movement; // Gets the player movement script
 
     void Start()
     {
         anim = book.gameObject.GetComponent<Animator>();
         book.enabled = false;
         movement = FindObjectOfType<MovementClass>();
-        menuCanvas.enabled = false;
-        //background.enabled = false;
         tutorialPage.SetActive(false);
         elementPage.SetActive(false);
+
+
     }
 
     private void Update()
@@ -49,7 +41,7 @@ public class BookScript : MonoBehaviour
         
     }
 
-    public void Icon()
+    public void Icon() //Opens the menu when the book icon is pressed
     {
         book.enabled = true;
         openBook = true;
@@ -57,18 +49,31 @@ public class BookScript : MonoBehaviour
         StartCoroutine(ShowText());
     }
 
-    public void Close()
+    public IEnumerator ShowText() //Adds a delay to when the text is shown
+    {
+        yield return new WaitForSeconds(0.6f);
+        mainPage.SetActive(true);
+        tutorialPage.SetActive(false);
+        elementPage.SetActive(false);
+        background.enabled = true;
+    }
+
+
+    public void Close() //Closes the menu completely
     {
         //Hide the book
         book.enabled = false;
         openBook = false;
         anim.SetBool("BookOpen", openBook);
 
-        // Switch the canvases
-        inputCanvas.enabled = true;
-        menuCanvas.enabled = false;
+        // Hide all text
+        mainPage.SetActive(false);
+        tutorialPage.SetActive(false);
+        elementPage.SetActive(false);
         background.enabled = false;
     }
+
+    // MENU NAVIGATION
 
     public void MenuToTutorial()
     {
@@ -87,14 +92,12 @@ public class BookScript : MonoBehaviour
     {
         tutorialPage.SetActive(false);
         movementTutorial.SetActive(true);
-        book2.enabled = false;
         exit2.SetActive(true);
     }
 
     public void MovementToTutorials()
     {
         movementTutorial.SetActive(false);
-        book2.enabled = true;
         tutorialPage.SetActive(true);
         exit2.SetActive(false);
     }
@@ -111,22 +114,11 @@ public class BookScript : MonoBehaviour
         mainPage.SetActive(true);
     }
 
-    public IEnumerator ShowText()
-    {
-        yield return new WaitForSeconds(0.6f);
-        menuCanvas.enabled = true;
-        inputCanvas.enabled = false;
-        mainPage.SetActive(true);
-        tutorialPage.SetActive(false);
-        elementPage.SetActive(false);
-    }
- 
     public void Ice()
     {
         ice.SetActive(true);
         exit.SetActive(true);
         background.enabled = true;
-        book2.enabled = false;
     }
 
     public void Vine()
@@ -134,7 +126,6 @@ public class BookScript : MonoBehaviour
         vine.SetActive(true);
         exit.SetActive(true);
         background.enabled = true;
-        book2.enabled = false;
     }
 
     public void Rock()
@@ -142,7 +133,6 @@ public class BookScript : MonoBehaviour
         rock.SetActive(true);
         exit.SetActive(true);
         background.enabled = true;
-        book2.enabled = false;
     }
 
     public void Fire()
@@ -150,17 +140,15 @@ public class BookScript : MonoBehaviour
         fire.SetActive(true);
         exit.SetActive(true);
         background.enabled = true;
-        book2.enabled = false;
     }
 
-    public void CloseTutorial()
+    public void CloseTutorial() //Closes all tutorial screens
     {
         ice.SetActive(false);
         vine.SetActive(false);
         rock.SetActive(false);
         fire.SetActive(false);
         movementTutorial.SetActive(false);
-        book2.enabled = true;
         exit.SetActive(false);
        
     }
