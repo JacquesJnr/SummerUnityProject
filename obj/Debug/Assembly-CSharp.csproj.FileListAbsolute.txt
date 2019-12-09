@@ -267,3 +267,7 @@ D:\Unity\Camera & Movement\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.ca
 D:\Unity\Camera & Movement\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\Unity\Camera & Movement\obj\Debug\Assembly-CSharp.dll
 D:\Unity\Camera & Movement\obj\Debug\Assembly-CSharp.pdb
+D:\Unity\_UNITY REPOSITORY\SummerUnityProject\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+D:\Unity\_UNITY REPOSITORY\SummerUnityProject\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+D:\Unity\_UNITY REPOSITORY\SummerUnityProject\obj\Debug\Assembly-CSharp.dll
+D:\Unity\_UNITY REPOSITORY\SummerUnityProject\obj\Debug\Assembly-CSharp.pdb
