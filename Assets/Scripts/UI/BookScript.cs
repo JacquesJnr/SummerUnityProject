@@ -26,7 +26,7 @@ public class BookScript : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = book.gameObject.GetComponent<Animator>();
         book.enabled = false;
         movement = FindObjectOfType<MovementClass>();
         menuCanvas.enabled = false;

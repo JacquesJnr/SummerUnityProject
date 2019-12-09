@@ -131,7 +131,7 @@
     <Compile Include="Assets\Scripts\Tests\CharController2D.cs" />
     <Compile Include="Assets\Scripts\Tests\MovementTest.cs" />
     <Compile Include="Assets\Scripts\UI\BookScript.cs" />
-    <Compile Include="Assets\Scripts\UI\parallaxing.cs" />
+    <Compile Include="Assets\Scripts\UI\Parallax.cs" />
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
