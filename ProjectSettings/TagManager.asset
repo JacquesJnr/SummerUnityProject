@@ -18,6 +18,7 @@ TagManager:
   - Steam
   - platforms
   - background
+  - mainMenuElements
   layers:
   - Default
   - TransparentFX

@@ -4,9 +4,8 @@ using System.Collections.Generic;
 
 public class parallaxing : MonoBehaviour
 {
-    public List<Transform> backgrounds; 
+    public List<Transform> backgrounds;
     private float[] parallaxScales;
-    public GameObject[] backgroundGroup;
     public float smoothing = 1f; 
     private Transform cam; 
     private Vector3 previousCamPos; 
@@ -15,6 +14,12 @@ public class parallaxing : MonoBehaviour
     {
         // set up camera the reference
         cam = Camera.main.transform;
+
+        //Add the background images that will make up the parallax using the background tag
+        foreach (GameObject bg in GameObject.FindGameObjectsWithTag("background"))
+        {
+            backgrounds.Add(bg.GetComponent<Transform>());
+        }
     }
     // Use this for initialization
     void Start()
@@ -26,10 +31,7 @@ public class parallaxing : MonoBehaviour
         for (int i = 0; i < backgrounds.Count; i++)
         {
             parallaxScales[i] = backgrounds[i].position.z;
-        }
-
-
-        
+        }        
     }
     // Update is called once per frame
     void Update()
