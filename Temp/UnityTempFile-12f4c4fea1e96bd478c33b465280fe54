@@ -1,11 +1,14 @@
 /target:library
 /nowarn:0169
-/out:Temp/UnityEngine.TestRunner.dll
+/out:Temp/Unity.Timeline.dll
 /debug:portable
 /optimize-
 /nostdlib+
 /preferreduilang:en-US
 /langversion:latest
+/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
+/reference:Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll
+/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll
@@ -68,10 +71,15 @@
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/Managed/UnityEditor.Graphs.dll
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+/reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 /reference:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
-/reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll"
+/reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll"
+/reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll"
+/reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll"
+/reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll"
+/reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll"
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll
@@ -221,6 +229,7 @@
 /define:ENABLE_WWW
 /define:ENABLE_CLOUD_SERVICES_COLLAB
 /define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+/define:ENABLE_CLOUD_SERVICES_ADS
 /define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
 /define:ENABLE_CLOUD_SERVICES_UNET
 /define:ENABLE_CLOUD_SERVICES_BUILD
@@ -238,46 +247,34 @@
 /define:ENABLE_SCRIPTING_GC_WBARRIERS
 /define:PLATFORM_SUPPORTS_MONO
 /define:ENABLE_VIDEO
-/define:ENABLE_RUNTIME_GI
-/define:ENABLE_GAMECENTER
+/define:PLATFORM_ANDROID
+/define:UNITY_ANDROID
+/define:UNITY_ANDROID_API
+/define:ENABLE_EGL
 /define:ENABLE_NETWORK
+/define:ENABLE_RUNTIME_GI
+/define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
 /define:ENABLE_UNITYWEBREQUEST
 /define:ENABLE_CLOUD_SERVICES
-/define:ENABLE_CLOUD_SERVICES_ADS
 /define:ENABLE_CLOUD_SERVICES_ANALYTICS
+/define:ENABLE_EVENT_QUEUE
 /define:ENABLE_CLOUD_SERVICES_PURCHASING
 /define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
-/define:ENABLE_CLOUD_SERVICES_IOS_NATIVE_CRASH_REPORTING
-/define:ENABLE_IOS_ON_DEMAND_RESOURCES
-/define:ENABLE_IOS_APP_SLICING
-/define:PLAYERCONNECTION_LISTENS_FIXED_PORT
-/define:DEBUGGER_LISTENS_FIXED_PORT
+/define:ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING
 /define:PLATFORM_SUPPORTS_ADS_ID
-/define:SUPPORT_ENVIRONMENT_VARIABLES
-/define:PLATFORM_SUPPORTS_PROFILER
-/define:ENABLE_ENGINE_CODE_STRIPPING
-/define:PLATFORM_HAS_NO_SUPPORT_FOR_BUCKET_ALLOCATOR
-/define:STRICTCPP_NEW_DELETE_SIGNATURES
-/define:HAS_NEON_SKINNING
-/define:UNITY_GFX_USE_PLATFORM_VSYNC
-/define:UNITY_INPUT_SIMULATE_EVENTS
-/define:PLATFORM_ALWAYS_USES_STDOUT_FOR_LOG
-/define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
-/define:UNITY_ASTC_ONLY_DECOMPRESS
-/define:ENABLE_ONSCREEN_KEYBOARD
-/define:SUPPORTS_GRANULAR_MODULE_REGISTRATION
-/define:ENABLE_UNITYADS_RUNTIME
-/define:UNITY_UNITYADS_API
-/define:PLATFORM_IOS
-/define:UNITY_IOS
-/define:PLATFORM_IPHONE
-/define:UNITY_IPHONE
-/define:UNITY_IPHONE_API
-/define:SUPPORT_MULTIPLE_DISPLAYS
+/define:UNITY_CAN_SHOW_SPLASH_SCREEN
 /define:ENABLE_VR
 /define:ENABLE_AR
 /define:UNITY_HAS_GOOGLEVR
+/define:UNITY_HAS_TANGO
 /define:ENABLE_SPATIALTRACKING
+/define:ENABLE_RUNTIME_PERMISSIONS
+/define:ENABLE_ENGINE_CODE_STRIPPING
+/define:UNITY_ASTC_ONLY_DECOMPRESS
+/define:ANDROID_USE_SWAPPY
+/define:ENABLE_ONSCREEN_KEYBOARD
+/define:ENABLE_UNITYADS_RUNTIME
+/define:UNITY_UNITYADS_API
 /define:ENABLE_MONO
 /define:NET_STANDARD_2_0
 /define:ENABLE_PROFILER
@@ -301,100 +298,69 @@
 /define:ENABLE_LEGACY_INPUT_MANAGER
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\AssemblyInfo.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Assertions\AllocatingGCMemoryConstraint.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Assertions\ConstraintsExtensions.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Assertions\InvalidSignatureException.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Assertions\Is.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Assertions\LogAssert.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Assertions\LogScope\ILogScope.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Assertions\LogScope\LogEvent.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Assertions\LogScope\LogMatch.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Assertions\LogScope\LogScope.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Assertions\UnexpectedLogMessageException.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Assertions\UnhandledLogMessageException.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Assertions\UnityTestTimeoutException.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\ActionDelegator.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityCombinatorialStrategy.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityPlatformAttribute.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnitySetUpAttribute.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityTearDownAttribute.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityTestAttribute.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\BaseDelegator.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Commands\BeforeAfterTestCommandBase.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Commands\BeforeAfterTestCommandState.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableApplyChangesToContextCommand.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableSetUpTearDownCommand.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableTestMethodCommand.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Commands\ImmediateEnumerableCommand.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Commands\OuterUnityTestActionCommand.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Commands\SetUpTearDownCommand.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Commands\TestActionCommand.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Commands\TestCommandPcHelper.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\ConstructDelegator.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Filters\AssemblyNameFilter.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Filters\CategoryFilterExtended.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\IStateSerializer.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Runner\CompositeWorkItem.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Runner\CoroutineTestWorkItem.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Runner\DefaultTestWorkItem.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Runner\FailCommand.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Runner\IEnumerableTestMethodCommand.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Runner\PlaymodeWorkItemFactory.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Runner\RestoreTestContextAfterDomainReload.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityLogCheckDelegatingCommand.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityTestAssemblyRunner.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityTestExecutionContext.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityWorkItem.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityWorkItemDataHolder.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\Runner\WorkItemFactory.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\TestExtensions.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\TestResultExtensions.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\NUnitExtensions\UnityTestAssemblyBuilder.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\Callbacks\PlayModeRunnerCallback.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\Callbacks\RemoteTestResultSender.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\Callbacks\TestResultRenderer.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\Callbacks\TestResultRendererCallback.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\ITestRunnerListener.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\Messages\IEditModeTestYieldInstruction.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\PlaymodeTestsController.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\PlaymodeTestsControllerSettings.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\RemoteHelpers\IRemoteTestResultDataFactory.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\RemoteHelpers\PlayerConnectionMessageIds.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestData.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultData.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultDataFactory.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultDataWithTestData.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\TestEnumeratorWrapper.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\TestListenerWrapper.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\TestPlatform.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\TestRunner\TestRunnerFilter.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\AssemblyProvider\AssemblyLoadProxy.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\AssemblyProvider\AssemblyWrapper.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\AssemblyProvider\IAssemblyLoadProxy.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\AssemblyProvider\IAssemblyWrapper.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\AssemblyProvider\IScriptingRuntimeProxy.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\AssemblyProvider\ITestAssemblyProvider.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\AssemblyProvider\PlayerTestAssemblyProvider.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\AssemblyProvider\ScriptingRuntimeProxy.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\AttributeHelper.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\ColorEqualityComparer.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\CoroutineRunner.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\FloatEqualityComparer.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\IOuterUnityTestAction.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\IPostBuildCleanup.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\IPrebuildSceneSetup.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\MonoBehaviourTest\IMonoBehaviourTest.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\MonoBehaviourTest\MonoBehaviourTest.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\PostBuildCleanupAttribute.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\PrebuildSceneSetupAttribute.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\QuaternionEqualityComparer.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\StacktraceFilter.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\Utils.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\Vector2ComparerWithEqualsOperator.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\Vector2EqualityComparer.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\Vector3ComparerWithEqualsOperator.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\Vector3EqualityComparer.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\Vector4ComparerWithEqualsOperator.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.test-framework@1.0.13\UnityEngine.TestRunner\Utils\Vector4EqualityComparer.cs"
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Activation\ActivationMixerPlayable.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Activation\ActivationPlayableAsset.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Activation\ActivationTrack.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Animation\AnimationOutputWeightProcessor.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Animation\AnimationPlayableAsset.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Animation\AnimationTrack.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Animation\ICurvesOwner.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\AssetUpgrade\AnimationPlayableAssetUpgrade.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\AssetUpgrade\AnimationTrackUpgrade.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\AssetUpgrade\ClipUpgrade.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\AssetUpgrade\TimelineUpgrade.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\AssetUpgrade\TrackUpgrade.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Attributes\TrackColorAttribute.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Audio\AudioClipProperties.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Audio\AudioMixerProperties.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Audio\AudioPlayableAsset.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Audio\AudioTrack.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\ClipCaps.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Control\ControlPlayableAsset.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Control\ControlTrack.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\DiscreteTime.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Evaluation\InfiniteRuntimeClip.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Evaluation\IntervalTree.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Evaluation\RuntimeClip.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Evaluation\RuntimeClipBase.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Evaluation\RuntimeElement.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Evaluation\ScheduleRuntimeClip.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Events\IMarker.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Events\INotificationOptionProvider.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Events\Marker.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Events\MarkerList.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Events\MarkerTrack.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Events\Signals\CustomSignalEventDrawer.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Events\Signals\SignalAsset.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Events\Signals\SignalEmitter.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Events\Signals\SignalReceiver.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Events\SignalTrack.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Extensions\TrackExtensions.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\GroupTrack.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Playables\ActivationControlPlayable.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Playables\BasicScriptPlayable.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Playables\DirectorControlPlayable.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Playables\ITimeControl.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Playables\NotificationFlags.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Playables\ParticleControlPlayable.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Playables\PrefabControlPlayable.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Playables\TimeControlPlayable.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Playables\TimeNotificationBehaviour.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Properties\AssemblyInfo.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Scripting\PlayableTrack.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Timeline.deprecated.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\TimelineAsset.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\TimelineAsset_CreateRemove.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\TimelineAttributes.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\TimelineClip.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\TimelinePlayable.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\TrackAsset.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Utilities\Extrapolation.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Utilities\HashUtility.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Utilities\IPropertyCollector.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Utilities\IPropertyPreview.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Utilities\NotificationUtilities.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Utilities\TimelineCreateUtilities.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Utilities\TimelineUndo.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Utilities\TimeUtility.cs
+D:\Unity\Hub\2019.2.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.timeline\Runtime\Utilities\WeightUtility.cs

@@ -1,6 +1,6 @@
 /target:library
 /nowarn:0169
-/out:Temp/Unity.CollabProxy.Editor.dll
+/out:Temp/Unity.VSCode.Editor.dll
 /debug:portable
 /optimize-
 /nostdlib+
@@ -75,15 +75,14 @@
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/Managed/UnityEditor.Graphs.dll
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+/reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 /reference:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
-/reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll"
 /reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll"
 /reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll"
 /reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll"
 /reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll"
-/reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.purchasing@2.0.6/UnityEngine.Purchasing.dll"
 /reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll"
 /reference:"D:/Unity/_UNITY REPOSITORY/SummerUnityProject/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll"
 /reference:D:/Unity/Hub/2019.2.14f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll
@@ -238,6 +237,7 @@
 /define:ENABLE_WWW
 /define:ENABLE_CLOUD_SERVICES_COLLAB
 /define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+/define:ENABLE_CLOUD_SERVICES_ADS
 /define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
 /define:ENABLE_CLOUD_SERVICES_UNET
 /define:ENABLE_CLOUD_SERVICES_BUILD
@@ -255,46 +255,34 @@
 /define:ENABLE_SCRIPTING_GC_WBARRIERS
 /define:PLATFORM_SUPPORTS_MONO
 /define:ENABLE_VIDEO
-/define:ENABLE_RUNTIME_GI
-/define:ENABLE_GAMECENTER
+/define:PLATFORM_ANDROID
+/define:UNITY_ANDROID
+/define:UNITY_ANDROID_API
+/define:ENABLE_EGL
 /define:ENABLE_NETWORK
+/define:ENABLE_RUNTIME_GI
+/define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
 /define:ENABLE_UNITYWEBREQUEST
 /define:ENABLE_CLOUD_SERVICES
-/define:ENABLE_CLOUD_SERVICES_ADS
 /define:ENABLE_CLOUD_SERVICES_ANALYTICS
+/define:ENABLE_EVENT_QUEUE
 /define:ENABLE_CLOUD_SERVICES_PURCHASING
 /define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
-/define:ENABLE_CLOUD_SERVICES_IOS_NATIVE_CRASH_REPORTING
-/define:ENABLE_IOS_ON_DEMAND_RESOURCES
-/define:ENABLE_IOS_APP_SLICING
-/define:PLAYERCONNECTION_LISTENS_FIXED_PORT
-/define:DEBUGGER_LISTENS_FIXED_PORT
+/define:ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING
 /define:PLATFORM_SUPPORTS_ADS_ID
-/define:SUPPORT_ENVIRONMENT_VARIABLES
-/define:PLATFORM_SUPPORTS_PROFILER
-/define:ENABLE_ENGINE_CODE_STRIPPING
-/define:PLATFORM_HAS_NO_SUPPORT_FOR_BUCKET_ALLOCATOR
-/define:STRICTCPP_NEW_DELETE_SIGNATURES
-/define:HAS_NEON_SKINNING
-/define:UNITY_GFX_USE_PLATFORM_VSYNC
-/define:UNITY_INPUT_SIMULATE_EVENTS
-/define:PLATFORM_ALWAYS_USES_STDOUT_FOR_LOG
-/define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
-/define:UNITY_ASTC_ONLY_DECOMPRESS
-/define:ENABLE_ONSCREEN_KEYBOARD
-/define:SUPPORTS_GRANULAR_MODULE_REGISTRATION
-/define:ENABLE_UNITYADS_RUNTIME
-/define:UNITY_UNITYADS_API
-/define:PLATFORM_IOS
-/define:UNITY_IOS
-/define:PLATFORM_IPHONE
-/define:UNITY_IPHONE
-/define:UNITY_IPHONE_API
-/define:SUPPORT_MULTIPLE_DISPLAYS
+/define:UNITY_CAN_SHOW_SPLASH_SCREEN
 /define:ENABLE_VR
 /define:ENABLE_AR
 /define:UNITY_HAS_GOOGLEVR
+/define:UNITY_HAS_TANGO
 /define:ENABLE_SPATIALTRACKING
+/define:ENABLE_RUNTIME_PERMISSIONS
+/define:ENABLE_ENGINE_CODE_STRIPPING
+/define:UNITY_ASTC_ONLY_DECOMPRESS
+/define:ANDROID_USE_SWAPPY
+/define:ENABLE_ONSCREEN_KEYBOARD
+/define:ENABLE_UNITYADS_RUNTIME
+/define:UNITY_UNITYADS_API
 /define:ENABLE_MONO
 /define:NET_4_6
 /define:ENABLE_PROFILER
@@ -318,20 +306,7 @@
 /define:ENABLE_LEGACY_INPUT_MANAGER
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\AssemblyInfo.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\Bootstrap.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\CollabAnalytics.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\CollabHistoryWindow.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\CollabToolbarButton.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\CollabToolbarWindow.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\Presenters\CollabHistoryPresenter.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\Views\BuildStatusButton.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\Views\CollabHistoryDropDown.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\Views\CollabHistoryDropDownItem.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\Views\CollabHistoryItem.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\Views\CollabHistoryItemFactory.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\Views\CollabHistoryRevisionLine.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\Views\HistoryProgressSpinner.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\Views\ICollabHistoryItemFactory.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\Views\PagedListView.cs"
-"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.collab-proxy@1.2.16\Editor\Collab\Views\StatusView.cs"
+"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.ide.vscode@1.1.2\Editor\ProjectGeneration.cs"
+"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.ide.vscode@1.1.2\Editor\Utility.cs"
+"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.ide.vscode@1.1.2\Editor\VSCodeDiscovery.cs"
+"D:\Unity\_UNITY REPOSITORY\SummerUnityProject\Library\PackageCache\com.unity.ide.vscode@1.1.2\Editor\VSCodeScriptEditor.cs"
